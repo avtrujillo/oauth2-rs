@@ -49,10 +49,10 @@ required-features = ["reqwest-blocking"]
 
 [dependencies]
 base64 = ">= 0.21, <0.23"
-thiserror = "1.0"
+thiserror = "2.0"
 http = "1.5"
-rand = "0.8"
-rustls = { version = "^0.23.36", default-features = false, optional = true, features = [
+rand = "0.9"
+rustls = { version = "^0.23.19", default-features = false, optional = true, features = [
     "std", "logging", "prefer-post-quantum", "aws-lc-rs"
 ]}
 reqwest = {version = "^0.13.3", default-features = false, optional = true, features = [
@@ -67,7 +67,7 @@ chrono = { version = "0.4.45", default-features = false, features = ["clock", "s
 serde_path_to_error = "0.1.20"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.3", features = ["wasm_js"] }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
 curl = { version = "0.4.50", optional = true }
